@@ -61,8 +61,6 @@
       <input type="text" id="gb-name" placeholder="nickname (or leave blank for 'anonymous')" maxlength="40">
       <textarea id="gb-text" placeholder="say something. or don't. drawing is enough." maxlength="500"></textarea>
 
-      <p class="form-note">⚠️ right now entries save in YOUR browser only — i'm wiring this up to a real database (firebase) so messages reach me. soon™.</p>
-
       <button type="submit">leave entry</button>
     </form>
   </section>
@@ -85,5 +83,6 @@
 
 <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 <script src="js/main.js"></script>
+<script type="module" src="js/guestbook.js"></script>
 </body>
 </html>
