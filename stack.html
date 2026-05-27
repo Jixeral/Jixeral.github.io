@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>stack — Jixeral</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23e8e8e6'/%3E%3Ccircle cx='35' cy='40' r='4' fill='%23000'/%3E%3Ccircle cx='65' cy='40' r='4' fill='%23c43030'/%3E%3C/svg%3E">
+</head>
+<body>
+
+<div class="loader"><div class="text">loading</div></div>
+
+<nav>
+  <a href="index.html" class="logo">jix</a>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="loves.html">Loves</a></li>
+    <li><a href="stack.html">Stack</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<main>
+
+  <section class="hero" style="min-height:50vh;">
+    <div class="greeting reveal">— page 03 / the toolbox</div>
+    <h1 class="reveal">what i'm <span class="accent">learning</span>.</h1>
+    <p class="tagline reveal">honest progress, not a brag list. some of these i barely know. that's the point.</p>
+  </section>
+
+  <section class="reveal">
+    <div class="section-label"><span class="num">01</span> / languages</div>
+    <div class="stack-grid">
+      <div class="skill" style="--w: 80%;">
+        <div class="name">HTML <span class="level">comfortable</span></div>
+        <div class="bar"></div>
+        <div class="note">started here. still my favorite.</div>
+      </div>
+      <div class="skill" style="--w: 70%;">
+        <div class="name">CSS <span class="level">getting there</span></div>
+        <div class="bar"></div>
+        <div class="note">flexbox finally clicked. grid is still a mood.</div>
+      </div>
+      <div class="skill" style="--w: 55%;">
+        <div class="name">JavaScript <span class="level">learning</span></div>
+        <div class="bar"></div>
+        <div class="note">currently in the "what is `this`" phase.</div>
+      </div>
+      <div class="skill" style="--w: 40%;">
+        <div class="name">Python <span class="level">basic</span></div>
+        <div class="bar"></div>
+        <div class="note">scripts and small experiments.</div>
+      </div>
+      <div class="skill" style="--w: 25%;">
+        <div class="name">React <span class="level">beginner</span></div>
+        <div class="bar"></div>
+        <div class="note">useState. useEffect. usePanic.</div>
+      </div>
+      <div class="skill" style="--w: 15%;">
+        <div class="name">Node.js <span class="level">curious</span></div>
+        <div class="bar"></div>
+        <div class="note">npm install something something</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <div class="section-label"><span class="num">02</span> / tools i use</div>
+    <div class="stack-grid">
+      <div class="skill" style="--w: 75%;">
+        <div class="name">VS Code <span class="level">daily</span></div>
+        <div class="bar"></div>
+        <div class="note">dark theme, of course.</div>
+      </div>
+      <div class="skill" style="--w: 60%;">
+        <div class="name">Git / GitHub <span class="level">learning</span></div>
+        <div class="bar"></div>
+        <div class="note">commit, push, pray.</div>
+      </div>
+      <div class="skill" style="--w: 50%;">
+        <div class="name">Figma <span class="level">basic</span></div>
+        <div class="bar"></div>
+        <div class="note">for sketching ideas before code.</div>
+      </div>
+      <div class="skill" style="--w: 35%;">
+        <div class="name">Terminal <span class="level">basic</span></div>
+        <div class="bar"></div>
+        <div class="note">cd ls mkdir man wtf</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <div class="section-label"><span class="num">03</span> / right now</div>
+    <h2>my current <em>learning</em> ritual</h2>
+    <p>i learn best by building tiny things and breaking them. less tutorials, more "make a button that does a thing." this site is one of those things.</p>
+
+    <div class="terminal">
+<pre><span class="prompt">$</span> <span class="out">whoami</span>
+a person, still learning.
+
+<span class="prompt">$</span> <span class="out">cat ~/.currently_learning</span>
+<span class="comment"># week of <span id="weekDate"></span></span>
+- javascript: closures, async/await
+- css: animations, scroll-driven effects
+- git: branches without crying
+- python: building a small scraper for fun
+
+<span class="prompt">$</span> <span class="out">echo $GOAL</span>
+ship one small thing every month.
+</pre>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <div class="section-label"><span class="num">04</span> / wishlist</div>
+    <h2>things i <em>want</em> to learn next</h2>
+    <div class="grid grid-3">
+      <div class="card">
+        <div class="meta">soon</div>
+        <h3>TypeScript</h3>
+        <p>everyone keeps telling me. i'll get there.</p>
+        <span class="tag">types</span><span class="tag">soon</span>
+      </div>
+      <div class="card">
+        <div class="meta">soon</div>
+        <h3>Three.js</h3>
+        <p>3d on the web. for portfolios and weird art sites.</p>
+        <span class="tag">3d</span><span class="tag">webgl</span>
+      </div>
+      <div class="card">
+        <div class="meta">later</div>
+        <h3>Rust</h3>
+        <p>because it sounds hard and i'm a masochist.</p>
+        <span class="tag">systems</span>
+      </div>
+      <div class="card">
+        <div class="meta">later</div>
+        <h3>Tailwind / shadcn</h3>
+        <p>for shipping faster without losing my mind.</p>
+        <span class="tag">design</span>
+      </div>
+      <div class="card">
+        <div class="meta">later</div>
+        <h3>SQL</h3>
+        <p>SELECT * FROM patience;</p>
+        <span class="tag">data</span>
+      </div>
+      <div class="card">
+        <div class="meta">someday</div>
+        <h3>p5.js / creative code</h3>
+        <p>generative art. make the computer paint.</p>
+        <span class="tag">art</span>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>made slowly · <span class="heart">♥</span> · <span id="year"></span></footer>
+
+<a href="#" class="punpun-corner" title="punpun">
+  <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <ellipse cx="50" cy="55" rx="38" ry="40" fill="#e8e8e6"/>
+    <path d="M 30 20 L 35 35 L 40 22 Z M 60 22 L 65 35 L 70 20 Z" fill="#e8e8e6"/>
+    <circle cx="38" cy="50" r="4" fill="#0a0a0a"/>
+    <circle cx="62" cy="50" r="4" fill="#c43030"/>
+    <path d="M 42 70 Q 50 75 58 70" stroke="#0a0a0a" stroke-width="2" fill="none"/>
+  </svg>
+</a>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const d = new Date();
+  document.getElementById('weekDate').textContent = d.toDateString();
+</script>
+<script src="js/main.js"></script>
+</body>
+</html>
