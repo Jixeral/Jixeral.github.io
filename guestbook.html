@@ -9,6 +9,30 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="icon" href="assets/img/punpun-head-line.png">
+<style>
+  .gb-details {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .gb-details.show {
+    max-height: 500px;
+    opacity: 1;
+    margin-bottom: 16px;
+  }
+  .gb-prompt {
+    font-size: 11px;
+    color: var(--ink-faint);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: 8px;
+    display: block;
+  }
+</style>
 </head>
 <body>
 
@@ -58,10 +82,14 @@
         <input type="file" id="gb-image" accept="image/*" style="display:none;">
       </div>
 
-      <input type="text" id="gb-name" placeholder="nickname (or leave blank for 'anonymous')" maxlength="40">
-      <textarea id="gb-text" placeholder="say something. or don't. drawing is enough." maxlength="500"></textarea>
+      <div id="gb-details" class="gb-details">
+        <span class="gb-prompt">add credits or a message?</span>
+        <input type="text" id="gb-name" placeholder="nickname (or leave blank for 'anonymous')" maxlength="40">
+        <textarea id="gb-text" placeholder="say something. or don't. drawing is enough." maxlength="500"></textarea>
+      </div>
 
-      <button type="submit">leave entry</button>
+      <button type="button" id="gb-save-btn">save drawing →</button>
+      <button type="submit" id="gb-submit-btn" style="display:none;">leave entry →</button>
     </form>
   </section>
 
@@ -84,5 +112,5 @@
 <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 <script src="js/main.js"></script>
 <script type="module" src="js/guestbook.js"></script>
-</body>
+<script src="js/dev-tools.js"></script></body>
 </html>

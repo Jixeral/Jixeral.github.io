@@ -6,15 +6,24 @@ import { collection, addDoc, getDocs, query, orderBy, serverTimestamp } from "ht
   if (!canvas) return;
   const ctx = canvas.getContext('2d');
 
+  // State to track if the user actually drew something
+  let isDirty = false;
+
   function fit() {
     const rect = canvas.getBoundingClientRect();
     canvas.width = rect.width * devicePixelRatio;
     canvas.height = rect.height * devicePixelRatio;
     ctx.scale(devicePixelRatio, devicePixelRatio);
+    
+    // Set background to transparent for saving, 
+    // but we'll fill it with light grey for the visual UI
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.fillStyle = '#f5f5f5';
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.fillRect(0, 0, canvas.width / devicePixelRatio, canvas.height / devicePixelRatio);
+    
     ctx.lineCap = 'round';
     ctx.lineJoin = 'round';
+    isDirty = false; 
   }
   fit();
   window.addEventListener('resize', fit);
@@ -48,6 +57,7 @@ import { collection, addDoc, getDocs, query, orderBy, serverTimestamp } from "ht
     ctx.stroke();
     lastX = p.x; 
     lastY = p.y;
+    isDirty = true; // Mark as drawn
     if(e.cancelable) e.preventDefault();
   }
 
@@ -63,11 +73,22 @@ import { collection, addDoc, getDocs, query, orderBy, serverTimestamp } from "ht
 
   document.getElementById('gb-clear').addEventListener('click', () => {
     ctx.fillStyle = '#f5f5f5';
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.fillRect(0, 0, canvas.width / devicePixelRatio, canvas.height / devicePixelRatio);
+    isDirty = false;
   });
 
+  // --- UI FLOW ---
+  const saveBtn = document.getElementById('gb-save-btn');
+  const submitBtn = document.getElementById('gb-submit-btn');
+  const details = document.getElementById('gb-details');
   const form = document.getElementById('gb-form');
-  
+
+  saveBtn.addEventListener('click', () => {
+    details.classList.add('show');
+    saveBtn.style.display = 'none';
+    submitBtn.style.display = 'block';
+  });
+
   async function saveEntry(entryData) {
     try {
       await addDoc(collection(db, "entries"), {
@@ -77,9 +98,14 @@ import { collection, addDoc, getDocs, query, orderBy, serverTimestamp } from "ht
       renderEntries();
       form.reset();
       document.getElementById('gb-clear').click();
+      // Reset UI state
+      details.classList.remove('show');
+      saveBtn.style.display = 'block';
+      submitBtn.style.display = 'none';
+      isDirty = false;
     } catch (e) {
       console.error("Error adding document: ", e);
-      alert("Something went wrong while saving your entry. It might be too large!");
+      alert("Something went wrong while saving your entry.");
     }
   }
 
@@ -89,7 +115,12 @@ import { collection, addDoc, getDocs, query, orderBy, serverTimestamp } from "ht
     const text = document.getElementById('gb-text').value.trim();
     const fileInput = document.getElementById('gb-image');
     const file = fileInput.files[0];
-    const drawingData = canvas.toDataURL('image/png', 0.7); // Compress slightly
+
+    // Only save drawing if it's not just a blank white box
+    let drawingData = null;
+    if (isDirty) {
+      drawingData = canvas.toDataURL('image/png', 0.7);
+    }
 
     const entry = {
       name, 
