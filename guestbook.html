@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>guestbook — Jixeral</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="assets/img/punpun-head-line.png">
+</head>
+<body>
+
+<div class="loader"><div class="text">loading</div></div>
+
+<nav>
+  <a href="index.html" class="logo">jix</a>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="loves.html">Loves</a></li>
+    <li><a href="stack.html">Stack</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="brand.html">Brand</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="guestbook.html">Guestbook</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<main>
+
+  <section class="hero" style="min-height:40vh;">
+    <img src="assets/img/sachi-bird.png" alt="" class="hero-side hide-mobile" style="width:140px;">
+    <div class="greeting reveal">— page 07 / leave a mark</div>
+    <h1 class="reveal">the <span class="accent">guestbook</span>.</h1>
+    <p class="tagline reveal">draw something. write a note. drop a picture. sign your name or stay nameless. either way — i'll see it. and it'll be here forever (or until i clean it).</p>
+  </section>
+
+  <section class="reveal">
+    <div class="section-label"><span class="num">01</span> / draw + write</div>
+
+    <form id="gb-form" autocomplete="off">
+      <div class="guestbook-canvas-wrap">
+        <canvas id="gb-canvas"></canvas>
+      </div>
+
+      <div class="gb-tools">
+        <label>color
+          <input type="color" id="gb-color" value="#000000">
+        </label>
+        <label>size
+          <input type="range" id="gb-size" min="1" max="20" value="3">
+        </label>
+        <button type="button" id="gb-clear">clear drawing</button>
+        <label for="gb-image" style="margin-left: auto;">📎 attach image</label>
+        <input type="file" id="gb-image" accept="image/*" style="display:none;">
+      </div>
+
+      <input type="text" id="gb-name" placeholder="nickname (or leave blank for 'anonymous')" maxlength="40">
+      <textarea id="gb-text" placeholder="say something. or don't. drawing is enough." maxlength="500"></textarea>
+
+      <p class="form-note">⚠️ right now entries save in YOUR browser only — i'm wiring this up to a real database (firebase) so messages reach me. soon™.</p>
+
+      <button type="submit">leave entry</button>
+    </form>
+  </section>
+
+  <section class="reveal">
+    <div class="section-label"><span class="num">02</span> / what people said</div>
+    <div id="gb-entries" class="gb-entries"></div>
+  </section>
+
+  <section class="reveal">
+    <img src="assets/img/sachi-bird.png" alt="" style="display:block; margin: 64px auto; max-width: 120px; opacity: 0.6;">
+    <p style="text-align:center; font-style:italic; color: var(--ink-faint); font-family: var(--serif); font-size: 16px;">"thanks for stopping by."</p>
+  </section>
+
+</main>
+
+<footer>made slowly · <span class="heart">♥</span> · <span id="year"></span> · dechu.</footer>
+
+<a href="#" class="punpun-corner" title="punpun"><img src="assets/img/punpun-pixel.png" alt=""></a>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="js/main.js"></script>
+</body>
+</html>

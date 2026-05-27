@@ -4,12 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>home — Jixeral</title>
-<meta name="description" content="A quiet corner of the internet.">
+<meta name="description" content="A quiet corner of the internet. — Jixeral.">
+<meta property="og:title" content="Jixeral — a quiet corner of the internet">
+<meta property="og:description" content="dechu. a 17 year old in ireland building things on the internet.">
+<meta property="og:image" content="assets/img/punpun-sad.png">
 <link rel="stylesheet" href="css/style.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23e8e8e6'/%3E%3Ccircle cx='35' cy='40' r='4' fill='%23000'/%3E%3Ccircle cx='65' cy='40' r='4' fill='%23c43030'/%3E%3C/svg%3E">
+<link rel="icon" href="assets/img/punpun-head-line.png">
 </head>
 <body>
 
@@ -23,44 +26,46 @@
     <li><a href="loves.html">Loves</a></li>
     <li><a href="stack.html">Stack</a></li>
     <li><a href="projects.html">Projects</a></li>
+    <li><a href="brand.html">Brand</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="guestbook.html">Guestbook</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
 </nav>
 
 <main>
 
-  <section class="hero" style="position:relative;">
-    <img src="assets/punpun.svg" alt="" class="floater small tilt-r" style="top:60px; right:-20px;">
-    <img src="assets/punpun-sad.svg" alt="" class="floater small tilt-l fade hide-mobile" style="bottom:120px; right:120px;">
+  <section class="hero">
+    <img src="assets/img/punpun-sad.png" alt="" class="hero-side hide-mobile">
+    <img src="assets/img/punpun-pixel.png" alt="" class="floater small tilt-r float-anim hide-mobile" style="top:140px; right:340px; opacity:0.35;">
     <div class="greeting reveal">— a quiet corner of the internet</div>
     <h1 class="reveal">hello, i'm<br><span class="accent glitch" data-text="Jixeral">Jixeral</span>.</h1>
-    <p class="tagline reveal">jix for short. a person, still figuring it out — i build things on the internet, read manga at 3am, and think about life more than i should. welcome in.</p>
+    <p class="tagline reveal">jix for short. 17, somewhere in ireland. i build small things on the internet, read manga at 3am, and think about life more than i probably should. welcome in.</p>
     <div class="scroll-hint">scroll ↓</div>
   </section>
 
   <section class="reveal" style="position:relative;">
-    <img src="assets/aiko.svg" alt="" class="floater med tilt-l hide-mobile" style="top:-40px; right:0;">
+    <img src="assets/img/punpun-floating.png" alt="" class="floater lg tilt-l float-anim hide-mobile" style="top:-60px; right:-80px;">
     <div class="section-label"><span class="num">01</span> / a brief introduction</div>
     <h2>i make small <em>things</em> on the<br>internet, mostly at night.</h2>
-    <p>i'm currently learning to code — html, css, javascript, python and a little bit of everything else. this site is where i collect what i love, what i'm building, and the things that make me, me.</p>
-    <p>it's a work in progress. just like me.</p>
+    <p>currently learning to code — Luau, C#, a little C++, and slowly working my way into web stuff (this site is one of those experiments). dreaming of becoming an <strong>indie game dev</strong> one day, and starting a <strong>clothing brand</strong> the day after that.</p>
+    <p>this site is where i collect what i love, what i'm building, and the things that make me, me.</p>
   </section>
 
-  <!-- big punpun manga panel -->
+  <!-- big manga panel grid -->
   <section class="reveal">
-    <div class="panel">
-      <div class="panel-text">
-        <p>"the sky is so big, isn't it? it doesn't even notice us."</p>
-        <div class="source" style="margin-top:12px; font-family:var(--mono); font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:var(--ink-faint);">— punpun, probably</div>
+    <div class="panel-grid">
+      <div class="pg-item pg-1">
+        <img src="assets/img/punpun-world.png" alt="punpun's world">
       </div>
-      <div class="panel-img">
-        <img src="assets/punpun.svg" alt="punpun">
+      <div class="pg-item pg-2 pg-quote">
+        "the sky is so big, isn't it? it doesn't even notice us."
+      </div>
+      <div class="pg-item pg-3">
+        <img src="assets/img/punpun-pixel.png" alt="punpun">
       </div>
     </div>
   </section>
-
-  <!-- decorative sky -->
-  <img src="assets/sky.svg" alt="" class="sky-banner reveal">
 
   <section class="reveal">
     <div class="quote-block">
@@ -70,7 +75,7 @@
   </section>
 
   <section class="reveal" style="position:relative;">
-    <img src="assets/punpun-happy.svg" alt="" class="floater small tilt-r hide-mobile" style="top:-30px; right:40px;">
+    <img src="assets/img/itll-be-alright.png" alt="" class="floater med tilt-r float-anim hide-mobile" style="top:-20px; right:0;">
     <div class="section-label"><span class="num">02</span> / wander around</div>
     <div class="grid grid-3">
       <a href="about.html" class="card">
@@ -81,37 +86,47 @@
       <a href="loves.html" class="card">
         <div class="meta">02 — things i love</div>
         <h3>my taste</h3>
-        <p>manga, music, films — a list of stuff that lives in my head. click anything to search it.</p>
+        <p>manga, music, films, games, books — click anything to search it.</p>
       </a>
       <a href="stack.html" class="card">
         <div class="meta">03 — learning</div>
         <h3>what i'm studying</h3>
-        <p>languages and tools i'm picking up. progress, slowly.</p>
+        <p>Luau, C#, C++ and where i'm trying to take them.</p>
       </a>
       <a href="projects.html" class="card">
         <div class="meta">04 — projects</div>
         <h3>what i'm building</h3>
-        <p>small experiments, half-finished ideas, occasionally a real thing.</p>
+        <p>currently just this. soon: games.</p>
+      </a>
+      <a href="brand.html" class="card">
+        <div class="meta">05 — clothing</div>
+        <h3>the brand</h3>
+        <p>jixeral the future label. design online, sell online.</p>
       </a>
       <a href="contact.html" class="card">
-        <div class="meta">05 — contact</div>
+        <div class="meta">06 — contact</div>
         <h3>say hello</h3>
         <p>email, socials, or just to send me a song you like.</p>
       </a>
-      <div class="card" style="opacity:0.5;">
-        <div class="meta">06 — ???</div>
-        <h3>...secret</h3>
-        <p>there's a hidden page somewhere. try the konami code.</p>
-      </div>
     </div>
   </section>
 
+  <!-- punpun group panel -->
   <section class="reveal">
-    <div class="panel">
-      <div class="panel-img"><img src="assets/aiko.svg" alt="aiko"></div>
-      <div class="panel-text">
-        <p>"if you wait long enough for someone, you start to forget what you were waiting for."</p>
-        <div class="source" style="margin-top:12px; font-family:var(--mono); font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:var(--ink-faint);">— aiko, maybe</div>
+    <img src="assets/img/punpun-family.png" alt="" style="display:block; margin: 64px auto; max-width: 320px; opacity: 0.7; mix-blend-mode: screen; filter: brightness(1.05);">
+    <p style="text-align:center; font-style:italic; color: var(--ink-faint); font-family: var(--serif); font-size: 18px;">"good morning. good night."</p>
+  </section>
+
+  <section class="reveal">
+    <div class="panel-grid">
+      <div class="pg-item pg-1">
+        <img src="assets/img/aiko-smile.png" alt="aiko">
+      </div>
+      <div class="pg-item pg-2 pg-quote">
+        "if you wait long enough for someone, you start to forget what you were waiting for."
+      </div>
+      <div class="pg-item pg-3">
+        <img src="assets/img/good-vibrations.png" alt="good vibrations">
       </div>
     </div>
   </section>
@@ -123,13 +138,7 @@
 </footer>
 
 <a href="#" class="punpun-corner" title="punpun">
-  <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-    <ellipse cx="50" cy="55" rx="38" ry="40" fill="#e8e8e6"/>
-    <path d="M 30 20 L 35 35 L 40 22 Z M 60 22 L 65 35 L 70 20 Z" fill="#e8e8e6"/>
-    <circle cx="38" cy="50" r="4" fill="#0a0a0a"/>
-    <circle cx="62" cy="50" r="4" fill="#c43030"/>
-    <path d="M 42 70 Q 50 75 58 70" stroke="#0a0a0a" stroke-width="2" fill="none"/>
-  </svg>
+  <img src="assets/img/punpun-pixel.png" alt="punpun">
 </a>
 
 <script>document.getElementById('year').textContent = new Date().getFullYear();</script>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>welcome — Jixeral</title>
+<link rel="stylesheet" href="../css/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="../assets/img/punpun-head-line.png">
+</head>
+<body>
+
+<div class="loader"><div class="text">loading</div></div>
+
+<nav>
+  <a href="../index.html" class="logo">jix</a>
+  <ul>
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../about.html">About</a></li>
+    <li><a href="../loves.html">Loves</a></li>
+    <li><a href="../stack.html">Stack</a></li>
+    <li><a href="../projects.html">Projects</a></li>
+    <li><a href="../brand.html">Brand</a></li>
+    <li><a href="../blog.html">Blog</a></li>
+    <li><a href="../guestbook.html">Guestbook</a></li>
+    <li><a href="../contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<main style="max-width: 720px;">
+
+  <section class="hero" style="min-height:30vh;">
+    <a href="../blog.html" style="font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-faint);">← back to blog</a>
+    <div class="greeting reveal" style="margin-top: 16px;">2026 · may 27 · first post</div>
+    <h1 class="reveal" style="font-size: clamp(36px, 6vw, 64px);">welcome, i <span class="accent">guess</span>.</h1>
+  </section>
+
+  <section class="reveal">
+    <p>so this is the first post. the site is finally live at jixeral.site, which feels mildly insane because three days ago i didn't even have a github account.</p>
+    <p>this place is for me, mostly. i wanted somewhere on the internet that wasn't a social media platform, didn't have an algorithm, and didn't try to sell me anything. somewhere quiet. somewhere where the lights are low.</p>
+    <p>if you're here, hi. you can leave a note in the <a href="../guestbook.html">guestbook</a> if you want. or just look around. or close the tab. all valid.</p>
+    <p>i'll write more eventually. probably about manga, things i'm building, things i'm overthinking. don't hold your breath. blog updates here are going to look more like a journal than a publication.</p>
+    <p style="margin-top: 40px; font-style: italic; color: var(--ink-faint);">— jix</p>
+  </section>
+
+  <section class="reveal">
+    <div class="quote-block">
+      <p>"good morning. good night."</p>
+      <div class="source">— punpun</div>
+    </div>
+  </section>
+
+</main>
+
+<footer>made slowly · <span class="heart">♥</span> · <span id="year"></span> · dechu.</footer>
+
+<a href="#" class="punpun-corner" title="punpun"><img src="../assets/img/punpun-pixel.png" alt=""></a>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="../js/main.js"></script>
+</body>
+</html>

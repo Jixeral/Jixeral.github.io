@@ -1,65 +1,90 @@
-# your personal site 🌑
+# jixeral.site — v3
 
-a dark, techy, slightly melancholic personal site inspired by *Goodnight Punpun*.
-plain HTML / CSS / JavaScript — no build step, no frameworks. hosts for free on GitHub Pages.
-
----
-
-## 📁 what's inside
-
-```
-site/
-├── index.html       ← home
-├── about.html       ← who you are
-├── loves.html       ← manga / music / films you like
-├── stack.html       ← coding skills & what you're learning
-├── projects.html    ← things you're building
-├── contact.html     ← email + socials
-├── css/
-│   └── style.css    ← all styling
-├── js/
-│   └── main.js      ← cursor, animations, easter eggs
-└── README.md        ← this file
-```
+a dark, melancholic, punpun-drenched personal site.
+plain HTML / CSS / vanilla JS. no build step. hosted on GitHub Pages, served at **jixeral.site**.
 
 ---
 
-## ✏️ how to edit it
+## 📁 files
 
-Everything is plain text — open any `.html` file in a text editor (VS Code is great) and replace:
-
-- `your name` / `[your name]` — your name
-- `y.n` (the logo in the top-left) — your initials
-- `hello@yourdomain.com` — your email
-- `@yourusername` — your handles
-- the manga/music/film lists in `loves.html`
-- the project rows in `projects.html`
-- the skill `--w: 70%;` numbers in `stack.html` (0%–100% = how good you are)
-
-The site is designed so you can just edit text without breaking anything.
+```
+.
+├── index.html        ← home
+├── about.html
+├── loves.html        ← manga / music / films / games / books — clickable search
+├── stack.html        ← coding languages: luau, c#, c++, goals
+├── projects.html
+├── brand.html        ← jixeral the future clothing brand + print-on-demand options
+├── blog.html         ← post list
+├── blog/
+│   └── welcome.html  ← first post (template for new ones)
+├── guestbook.html    ← draw + write + upload (localStorage now, firebase later)
+├── contact.html      ← form (needs formspree endpoint) + socials
+├── rec-room.html     ← hidden tribute page (linked from Loves > Rec Room)
+├── secret.html       ← deeper hidden page
+├── 404.html          ← custom 404
+├── CNAME             ← jixeral.site
+├── css/style.css
+├── js/main.js
+└── assets/img/       ← all the punpun images
+```
 
 ---
 
 ## 🥚 hidden things
 
-- **Konami code** (`↑ ↑ ↓ ↓ ← → ← → B A`) anywhere triggers a secret message
-- **Click the bird** in the bottom-right corner — punpun talks to you
-- **Open the browser console** (F12) — there's a hello message
-- **Hover everything** — cursor reacts, cards lift, text glitches
+- **konami code** anywhere → secret overlay (↑↑↓↓←→←→ B A)
+- **type "punpun"** anywhere → same secret
+- **type "dechu"**, "aiko", "jixeral", "lee" → little messages
+- **type "sayonara"** → jumps to /secret.html
+- **click the logo 5 times fast** → secret
+- **click the punpun bird** (bottom-right) → punpun says things
+- **click the afro god** (bottom-left, pops up when clicked) → keep clicking, he stays
+- **open the browser console** (F12) → friendly hello + cheat sheet
+- **/rec-room.html** → hidden tribute page (also reachable from Loves > Rec Room)
+- **/secret.html** → quiet inner page
 
 ---
 
-## 🚀 putting it on GitHub Pages (free hosting)
+## ✏️ editing it
 
-Full step-by-step is in **`HOW-TO-DEPLOY.md`**. Short version:
+Everything is plain text. Open any `.html` file in VS Code and edit. The site uses no framework — change text directly.
 
-1. Make a GitHub account
-2. Create a new repo named `yourusername.github.io`
-3. Upload everything inside the `site/` folder
-4. Your site is live at `https://yourusername.github.io`
-
-That's it. No build, no servers, no money.
+Common tweaks:
+- **Add a song to Loves:** open `loves.html`, find the music list, copy a `<li>` and edit.
+- **Add a new blog post:** copy `blog/welcome.html` to `blog/your-slug.html`, edit the content, then add a link to it in `blog.html`.
+- **Replace Rec Room photos:** upload images to `assets/img/rr/`, then edit `rec-room.html` and swap the `<div class="rr-slot">…</div>` placeholders for `<img src="assets/img/rr/your-file.jpg">`.
+- **Change Punpun pictures:** drop new files in `assets/img/` and update the `src=""` in the HTML.
 
 ---
 
-made slowly · ♥
+## 🔧 wiring up the backend bits
+
+Two things on the site currently work in "demo" mode and need ~5 minutes of setup to go live:
+
+### Contact form (Formspree)
+1. Go to <https://formspree.io>, sign up free.
+2. Create a new form. They give you an endpoint URL like `https://formspree.io/f/abcd1234`.
+3. Open `contact.html`, find `<form class="contact-form" action="" method="POST">`, paste the URL into `action=""`.
+4. Save, commit, push. Form now emails you.
+
+### Guestbook (Firebase Firestore)
+1. Go to <https://console.firebase.google.com> → create project.
+2. Add a "Web app" → copy the config snippet (it has `apiKey`, `projectId`, etc.).
+3. Enable **Firestore Database** (start in test mode for now).
+4. Enable **Storage** (for image uploads).
+5. Tell me and I'll write the Firebase glue code with your config baked in.
+
+---
+
+## 🚀 updating after edits
+
+(You're using GitHub Pages with drag-and-drop)
+1. Edit the files locally.
+2. Go to your repo on github.com.
+3. Drag the changed files into the repo (or use the ✏️ pencil to edit in-browser).
+4. Commit. Wait ~60 seconds. Refresh https://jixeral.site.
+
+---
+
+made slowly · ♥ · dechu.

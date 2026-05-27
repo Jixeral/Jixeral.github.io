@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>rec room — in loving memory</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="css/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="assets/img/punpun-head-line.png">
+</head>
+<body>
+
+<div class="loader"><div class="text">loading</div></div>
+
+<nav>
+  <a href="index.html" class="logo">jix</a>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="loves.html">← back to loves</a></li>
+  </ul>
+</nav>
+
+<main>
+
+  <section class="full-center">
+    <img src="assets/img/punpun-sad.png" alt="" style="max-width: 200px;">
+    <p style="font-size: 11px; letter-spacing: 0.4em; text-transform: uppercase; color: var(--ink-faint);">— hidden tribute</p>
+    <h1 style="font-family: var(--serif); font-style: italic; font-size: clamp(56px, 10vw, 120px); color: var(--accent); line-height: 1; text-align: center;">in loving<br>memory of<br>rec room.</h1>
+    <p style="max-width: 540px; font-size: 15px; color: var(--ink-dim); margin-top: 24px;">we had something. it was loud, it was weird, it was full of people i actually liked. those rooms are still there, but it doesn't feel the same anymore. maybe it never will.</p>
+    <p style="max-width: 540px; font-size: 14px; color: var(--ink-faint); font-style: italic;">if you played, you know.</p>
+  </section>
+
+  <section class="reveal">
+    <div class="section-label"><span class="num">01</span> / the photo wall</div>
+    <h2>screenshots <em>i</em> took</h2>
+    <p>this is where my rec room photos will live once i upload them. each slot below is a placeholder — replace them with real images by uploading them to the <code>assets/img/rr/</code> folder and editing this page.</p>
+
+    <div class="rr-gallery">
+      <div class="rr-slot">drop image 1<br>rr/photo-1.jpg</div>
+      <div class="rr-slot">drop image 2<br>rr/photo-2.jpg</div>
+      <div class="rr-slot">drop image 3<br>rr/photo-3.jpg</div>
+      <div class="rr-slot">drop image 4<br>rr/photo-4.jpg</div>
+      <div class="rr-slot">drop image 5<br>rr/photo-5.jpg</div>
+      <div class="rr-slot">drop image 6<br>rr/photo-6.jpg</div>
+      <div class="rr-slot">drop image 7<br>rr/photo-7.jpg</div>
+      <div class="rr-slot">drop image 8<br>rr/photo-8.jpg</div>
+    </div>
+
+    <p style="margin-top: 32px; font-size: 12px; color: var(--ink-faint); font-style: italic;">to fill these: upload your rec room screenshots to your repo under <code>assets/img/rr/</code> (any names you like), then replace each <code>&lt;div class="rr-slot"&gt;...&lt;/div&gt;</code> above with an <code>&lt;img src="assets/img/rr/your-file.jpg" /&gt;</code>. easy.</p>
+  </section>
+
+  <section class="reveal">
+    <div class="quote-block">
+      <p>"some places only exist in your head after a while. doesn't mean they weren't real."</p>
+      <div class="source">— jix · 2026</div>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <img src="assets/img/bench.png" alt="" style="display:block; margin: 80px auto 16px; max-width: 320px; opacity: 0.7; mix-blend-mode: screen; filter: brightness(1.05);">
+    <p style="text-align:center; font-style:italic; color: var(--ink-faint); font-family: var(--serif); font-size: 18px;">sitting on the bench. waiting for everyone to come back online.</p>
+  </section>
+
+  <section style="margin-top: 80px; text-align: center;">
+    <a href="loves.html" style="font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--ink-faint); border-bottom: 1px solid var(--ink-faint); padding-bottom: 4px;">← back to loves</a>
+  </section>
+
+</main>
+
+<footer style="margin-top: 80px;">made slowly · <span class="heart">♥</span> · <span id="year"></span> · dechu.</footer>
+
+<a href="#" class="punpun-corner" title="punpun"><img src="assets/img/punpun-pixel.png" alt=""></a>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="js/main.js"></script>
+</body>
+</html>

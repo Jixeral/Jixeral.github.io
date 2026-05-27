@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>blog — Jixeral</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="assets/img/punpun-head-line.png">
+</head>
+<body>
+
+<div class="loader"><div class="text">loading</div></div>
+
+<nav>
+  <a href="index.html" class="logo">jix</a>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="loves.html">Loves</a></li>
+    <li><a href="stack.html">Stack</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="brand.html">Brand</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="guestbook.html">Guestbook</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<main>
+
+  <section class="hero" style="min-height:50vh;">
+    <img src="assets/img/aiko-portrait.png" alt="" class="hero-side hide-mobile" style="width:200px; opacity:0.5;">
+    <div class="greeting reveal">— page 06 / thoughts in the open</div>
+    <h1 class="reveal">the <span class="accent">journal</span>.</h1>
+    <p class="tagline reveal">things i think about. things i'm working through. no schedule.</p>
+  </section>
+
+  <section class="reveal">
+    <div class="section-label"><span class="num">posts</span> / chronological</div>
+    <div class="blog-list">
+
+      <a href="blog/welcome.html" class="blog-entry">
+        <div class="date">2026 · may 27</div>
+        <div>
+          <h3>welcome, i guess.</h3>
+          <p class="excerpt">first post. site is finally live at jixeral.site. some notes on what this place is, what it isn't, and what i hope it becomes.</p>
+        </div>
+      </a>
+
+      <div class="blog-entry" style="opacity: 0.5; pointer-events: none;">
+        <div class="date">soon</div>
+        <div>
+          <h3>on being 17 and not knowing</h3>
+          <p class="excerpt">a draft. probably will sit here for a while before i'm brave enough to post it.</p>
+        </div>
+      </div>
+
+      <div class="blog-entry" style="opacity: 0.5; pointer-events: none;">
+        <div class="date">soon</div>
+        <div>
+          <h3>why goodnight punpun broke me</h3>
+          <p class="excerpt">trying to write about this manga without being annoying about it. difficult.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="reveal">
+    <div class="quote-block">
+      <p>"writing is just thinking, but slower."</p>
+      <div class="source">— me, just now</div>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <img src="assets/img/face-closeup.png" alt="" style="display:block; margin: 64px auto; max-width: 280px; opacity: 0.5; mix-blend-mode: screen; filter: brightness(1.1);">
+  </section>
+
+</main>
+
+<footer>made slowly · <span class="heart">♥</span> · <span id="year"></span> · dechu.</footer>
+
+<a href="#" class="punpun-corner" title="punpun"><img src="assets/img/punpun-pixel.png" alt=""></a>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="js/main.js"></script>
+</body>
+</html>

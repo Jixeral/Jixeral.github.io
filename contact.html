@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23e8e8e6'/%3E%3Ccircle cx='35' cy='40' r='4' fill='%23000'/%3E%3Ccircle cx='65' cy='40' r='4' fill='%23c43030'/%3E%3C/svg%3E">
+<link rel="icon" href="assets/img/punpun-head-line.png">
 </head>
 <body>
 
@@ -22,34 +22,36 @@
     <li><a href="loves.html">Loves</a></li>
     <li><a href="stack.html">Stack</a></li>
     <li><a href="projects.html">Projects</a></li>
+    <li><a href="brand.html">Brand</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="guestbook.html">Guestbook</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
 </nav>
 
 <main>
 
-  <section class="hero" style="min-height:50vh; position:relative;">
-    <img src="assets/punpun-happy.svg" alt="" class="floater med tilt-r hide-mobile" style="top:40px; right:0;">
-    <img src="assets/aiko.svg" alt="" class="floater small tilt-l delay-2 fade hide-mobile" style="bottom:40px; right:180px;">
-    <div class="greeting reveal">— page 05 / the open door</div>
+  <section class="hero" style="min-height:40vh;">
+    <img src="assets/img/punpun-eyes-head.png" alt="" class="hero-side hide-mobile">
+    <div class="greeting reveal">— page 08 / the open door</div>
     <h1 class="reveal">say <span class="accent">hello</span>.</h1>
-    <p class="tagline reveal">i'm slow to reply but i read everything. send me a song you like, a question, or just a hello.</p>
+    <p class="tagline reveal">slow to reply but i read everything. send me a song you like, a question, or just a hello.</p>
   </section>
 
   <section class="reveal">
     <div class="section-label"><span class="num">01</span> / find me</div>
     <div class="contact-grid">
       <div>
-        <a href="mailto:hello@jixeral.site" class="contact-link">
-          <span>email</span>
-          <span class="arrow">→ hello@jixeral.site</span>
-        </a>
         <a href="https://github.com/Jixeral" target="_blank" class="contact-link">
           <span>github</span>
-          <span class="arrow">→ @jixeral</span>
+          <span class="arrow">→ @Jixeral</span>
         </a>
         <a href="https://twitter.com/jixeral" target="_blank" class="contact-link">
           <span>twitter / x</span>
+          <span class="arrow">→ @jixeral</span>
+        </a>
+        <a href="https://instagram.com/jixeral" target="_blank" class="contact-link">
+          <span>instagram</span>
           <span class="arrow">→ @jixeral</span>
         </a>
         <a href="https://letterboxd.com/jixeral" target="_blank" class="contact-link">
@@ -61,18 +63,20 @@
           <span class="arrow">→ @jixeral</span>
         </a>
       </div>
-      <div>
-        <h3>or, just send a thought</h3>
-        <p>i made this site partly so people could reach me without it feeling weird. if anything here resonated — a manga, a song, a piece of code — tell me. that's the best kind of email.</p>
-        <p>i don't do dms on instagram. email is best.</p>
 
-        <div class="terminal">
-<pre><span class="prompt">$</span> <span class="out">ping yourname</span>
-PING jixeral (hello@jixeral.site): 56 data bytes
-64 bytes from jixeral: time=∞ ms
-<span class="comment"># i'll reply when i reply. promise.</span>
-</pre>
-        </div>
+      <div>
+        <h3>or, write me directly</h3>
+        <p>messages from this form will land in my inbox — once i hook up the form's backend. for now consider this a soft launch.</p>
+
+        <!-- when you set up Formspree, change the action="" to your endpoint url -->
+        <form class="contact-form" action="" method="POST">
+          <input type="text" name="name" placeholder="your name (or pseudonym)" required>
+          <input type="email" name="email" placeholder="your email (so i can reply)" required>
+          <input type="text" name="subject" placeholder="subject (optional)">
+          <textarea name="message" placeholder="what's on your mind?" required></textarea>
+          <p class="form-note">⚠️ this form needs a backend to actually send. set up <a href="https://formspree.io" target="_blank">formspree.io</a> (free, 5min) then paste your endpoint URL into the form's <code>action=""</code> in contact.html.</p>
+          <button type="submit">send →</button>
+        </form>
       </div>
     </div>
   </section>
@@ -84,30 +88,11 @@ PING jixeral (hello@jixeral.site): 56 data bytes
     </div>
   </section>
 
-
-  <section class="reveal">
-    <div class="panel">
-      <div class="panel-img"><img src="assets/punpun.svg" alt="punpun"></div>
-      <div class="panel-text">
-        <p>"thanks for stopping by. i hope something good happens to you today."</p>
-        <div class="source" style="margin-top:12px; font-family:var(--mono); font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:var(--ink-faint);">— jix &nbsp; · &nbsp; dechu.</div>
-      </div>
-    </div>
-  </section>
-
 </main>
 
 <footer>made slowly · <span class="heart">♥</span> · <span id="year"></span> · dechu.</footer>
 
-<a href="#" class="punpun-corner" title="punpun">
-  <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-    <ellipse cx="50" cy="55" rx="38" ry="40" fill="#e8e8e6"/>
-    <path d="M 30 20 L 35 35 L 40 22 Z M 60 22 L 65 35 L 70 20 Z" fill="#e8e8e6"/>
-    <circle cx="38" cy="50" r="4" fill="#0a0a0a"/>
-    <circle cx="62" cy="50" r="4" fill="#c43030"/>
-    <path d="M 42 70 Q 50 75 58 70" stroke="#0a0a0a" stroke-width="2" fill="none"/>
-  </svg>
-</a>
+<a href="#" class="punpun-corner" title="punpun"><img src="assets/img/punpun-pixel.png" alt=""></a>
 
 <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 <script src="js/main.js"></script>
