@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 240" width="200" height="240">
+  <!-- sad / lonely punpun, smaller drooping body -->
+  <ellipse cx="100" cy="140" rx="60" ry="70" fill="#f2f0ec" stroke="#0a0a0a" stroke-width="2.5"/>
+  <path d="M 55 80 L 64 105 L 75 84 Z" fill="#f2f0ec" stroke="#0a0a0a" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="M 82 70 L 90 100 L 100 75 Z" fill="#f2f0ec" stroke="#0a0a0a" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="M 105 73 L 115 100 L 125 71 Z" fill="#f2f0ec" stroke="#0a0a0a" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="M 130 80 L 138 105 L 148 84 Z" fill="#f2f0ec" stroke="#0a0a0a" stroke-width="2.5" stroke-linejoin="round"/>
+  <!-- droopy beak -->
+  <path d="M 92 138 L 100 148 L 108 138 L 100 134 Z" fill="#d4a060" stroke="#0a0a0a" stroke-width="2"/>
+  <!-- closed / sad eyes -->
+  <path d="M 70 122 Q 78 116 86 122" stroke="#0a0a0a" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M 114 122 Q 122 116 130 122" stroke="#c43030" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <!-- tear -->
+  <ellipse cx="125" cy="130" rx="2" ry="4" fill="#30a4c4" opacity="0.7"/>
+</svg>

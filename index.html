@@ -29,19 +29,38 @@
 
 <main>
 
-  <section class="hero">
+  <section class="hero" style="position:relative;">
+    <img src="assets/punpun.svg" alt="" class="floater small tilt-r" style="top:60px; right:-20px;">
+    <img src="assets/punpun-sad.svg" alt="" class="floater small tilt-l fade hide-mobile" style="bottom:120px; right:120px;">
     <div class="greeting reveal">— a quiet corner of the internet</div>
     <h1 class="reveal">hello, i'm<br><span class="accent glitch" data-text="Jixeral">Jixeral</span>.</h1>
     <p class="tagline reveal">jix for short. a person, still figuring it out — i build things on the internet, read manga at 3am, and think about life more than i should. welcome in.</p>
     <div class="scroll-hint">scroll ↓</div>
   </section>
 
-  <section class="reveal">
+  <section class="reveal" style="position:relative;">
+    <img src="assets/aiko.svg" alt="" class="floater med tilt-l hide-mobile" style="top:-40px; right:0;">
     <div class="section-label"><span class="num">01</span> / a brief introduction</div>
     <h2>i make small <em>things</em> on the<br>internet, mostly at night.</h2>
     <p>i'm currently learning to code — html, css, javascript, python and a little bit of everything else. this site is where i collect what i love, what i'm building, and the things that make me, me.</p>
     <p>it's a work in progress. just like me.</p>
   </section>
+
+  <!-- big punpun manga panel -->
+  <section class="reveal">
+    <div class="panel">
+      <div class="panel-text">
+        <p>"the sky is so big, isn't it? it doesn't even notice us."</p>
+        <div class="source" style="margin-top:12px; font-family:var(--mono); font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:var(--ink-faint);">— punpun, probably</div>
+      </div>
+      <div class="panel-img">
+        <img src="assets/punpun.svg" alt="punpun">
+      </div>
+    </div>
+  </section>
+
+  <!-- decorative sky -->
+  <img src="assets/sky.svg" alt="" class="sky-banner reveal">
 
   <section class="reveal">
     <div class="quote-block">
@@ -50,7 +69,8 @@
     </div>
   </section>
 
-  <section class="reveal">
+  <section class="reveal" style="position:relative;">
+    <img src="assets/punpun-happy.svg" alt="" class="floater small tilt-r hide-mobile" style="top:-30px; right:40px;">
     <div class="section-label"><span class="num">02</span> / wander around</div>
     <div class="grid grid-3">
       <a href="about.html" class="card">
@@ -61,7 +81,7 @@
       <a href="loves.html" class="card">
         <div class="meta">02 — things i love</div>
         <h3>my taste</h3>
-        <p>manga, music, films — a list of stuff that lives in my head.</p>
+        <p>manga, music, films — a list of stuff that lives in my head. click anything to search it.</p>
       </a>
       <a href="stack.html" class="card">
         <div class="meta">03 — learning</div>
@@ -86,10 +106,20 @@
     </div>
   </section>
 
+  <section class="reveal">
+    <div class="panel">
+      <div class="panel-img"><img src="assets/aiko.svg" alt="aiko"></div>
+      <div class="panel-text">
+        <p>"if you wait long enough for someone, you start to forget what you were waiting for."</p>
+        <div class="source" style="margin-top:12px; font-family:var(--mono); font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:var(--ink-faint);">— aiko, maybe</div>
+      </div>
+    </div>
+  </section>
+
 </main>
 
 <footer>
-  made slowly · <span class="heart">♥</span> · <span id="year"></span>
+  made slowly · <span class="heart">♥</span> · <span id="year"></span> · dechu.
 </footer>
 
 <a href="#" class="punpun-corner" title="punpun">

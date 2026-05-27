@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 280" width="200" height="280">
+  <!-- aiko: stylized manga girl with long dark hair, sad eyes — Punpun's Aiko inspired but original drawing -->
+  <!-- hair back layer -->
+  <path d="M 55 80 Q 50 60 75 45 Q 100 30 125 45 Q 150 60 145 85 L 150 200 Q 145 230 130 240 L 70 240 Q 55 230 50 200 Z" fill="#1a1a1a" stroke="#0a0a0a" stroke-width="1.5"/>
+  <!-- face -->
+  <ellipse cx="100" cy="120" rx="38" ry="48" fill="#f5e8dc" stroke="#0a0a0a" stroke-width="2"/>
+  <!-- hair bangs / fringe over forehead -->
+  <path d="M 62 95 Q 75 75 100 80 Q 125 75 138 95 Q 130 108 118 100 Q 105 92 100 102 Q 95 92 82 100 Q 70 108 62 95 Z" fill="#1a1a1a"/>
+  <!-- side hair -->
+  <path d="M 62 95 Q 55 130 60 170 Q 65 180 72 175 L 70 110 Z" fill="#1a1a1a"/>
+  <path d="M 138 95 Q 145 130 140 170 Q 135 180 128 175 L 130 110 Z" fill="#1a1a1a"/>
+  <!-- eyes (large, sad, asano-style) -->
+  <ellipse cx="83" cy="125" rx="6" ry="8" fill="#0a0a0a"/>
+  <ellipse cx="84" cy="123" rx="1.5" ry="2" fill="#f5e8dc"/>
+  <ellipse cx="117" cy="125" rx="6" ry="8" fill="#0a0a0a"/>
+  <ellipse cx="118" cy="123" rx="1.5" ry="2" fill="#f5e8dc"/>
+  <!-- eyelashes / brows tired -->
+  <path d="M 73 113 Q 83 110 91 114" stroke="#0a0a0a" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  <path d="M 109 114 Q 117 110 127 113" stroke="#0a0a0a" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  <!-- subtle blush -->
+  <ellipse cx="76" cy="140" rx="6" ry="2" fill="#c43030" opacity="0.18"/>
+  <ellipse cx="124" cy="140" rx="6" ry="2" fill="#c43030" opacity="0.18"/>
+  <!-- nose -->
+  <path d="M 100 132 L 99 142" stroke="#0a0a0a" stroke-width="1" fill="none"/>
+  <!-- mouth — small, slightly downturned -->
+  <path d="M 94 152 Q 100 154 106 152" stroke="#0a0a0a" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  <!-- collar / shirt hint -->
+  <path d="M 70 200 L 50 240 L 150 240 L 130 200 Z" fill="#181818" stroke="#0a0a0a" stroke-width="1.5"/>
+  <!-- collarbone line -->
+  <path d="M 80 190 Q 100 195 120 190" stroke="#0a0a0a" stroke-width="0.8" fill="none" opacity="0.4"/>
+</svg>

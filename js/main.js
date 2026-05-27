@@ -214,3 +214,146 @@ document.head.appendChild(styleEl);
     hero.style.transform = `translate(${x}px, ${y}px)`;
   });
 })();
+
+/* ============================================
+   NEW: ambient music + clickable taste links
+   ============================================ */
+
+// ===== TASTE LIST SEARCH ON CLICK =====
+(function initTasteSearch() {
+  document.querySelectorAll('.taste-list li').forEach(li => {
+    const title = li.querySelector('.title')?.textContent?.trim();
+    const by    = li.querySelector('.by')?.textContent?.trim();
+    if (!title) return;
+    const query = encodeURIComponent(`${title} ${by || ''}`.trim());
+    const url = `https://duckduckgo.com/?q=${query}`;
+    li.style.cursor = 'none';
+    li.addEventListener('click', () => window.open(url, '_blank', 'noopener'));
+    li.setAttribute('title', `search: ${title}`);
+  });
+})();
+
+// ===== AMBIENT MUSIC (web audio — gentle generated tones, no external files) =====
+(function initAmbient() {
+  let audioCtx = null;
+  let masterGain = null;
+  let nodes = [];
+  let playing = false;
+
+  function makeAmbient() {
+    if (audioCtx) return;
+    const AC = window.AudioContext || window.webkitAudioContext;
+    audioCtx = new AC();
+    masterGain = audioCtx.createGain();
+    masterGain.gain.value = 0;
+    masterGain.connect(audioCtx.destination);
+
+    // gentle pad: a few detuned sine + triangle oscillators
+    // chord: A minor 9 (A2, E3, G3, B3) — wistful, "punpun" mood
+    const freqs = [110, 164.81, 196, 246.94, 329.63];
+    freqs.forEach((f, i) => {
+      const osc = audioCtx.createOscillator();
+      osc.type = i % 2 ? 'sine' : 'triangle';
+      osc.frequency.value = f;
+      osc.detune.value = (Math.random() - 0.5) * 12;
+
+      const g = audioCtx.createGain();
+      g.gain.value = 0.0;
+
+      // slow LFO for shimmer
+      const lfo = audioCtx.createOscillator();
+      lfo.frequency.value = 0.05 + Math.random() * 0.1;
+      const lfoGain = audioCtx.createGain();
+      lfoGain.gain.value = 0.04;
+      lfo.connect(lfoGain).connect(g.gain);
+      lfo.start();
+
+      // low-pass for warmth
+      const lp = audioCtx.createBiquadFilter();
+      lp.type = 'lowpass';
+      lp.frequency.value = 800 + Math.random() * 400;
+
+      osc.connect(g).connect(lp).connect(masterGain);
+      osc.start();
+
+      // initial volume fade-in
+      g.gain.linearRampToValueAtTime(0.08 + Math.random() * 0.04, audioCtx.currentTime + 4);
+      nodes.push({ osc, g, lfo, lp });
+    });
+
+    // subtle noise wash (rain-like)
+    const bufSize = 2 * audioCtx.sampleRate;
+    const noiseBuf = audioCtx.createBuffer(1, bufSize, audioCtx.sampleRate);
+    const out = noiseBuf.getChannelData(0);
+    for (let i = 0; i < bufSize; i++) out[i] = (Math.random() * 2 - 1) * 0.4;
+    const noise = audioCtx.createBufferSource();
+    noise.buffer = noiseBuf;
+    noise.loop = true;
+    const noiseFilter = audioCtx.createBiquadFilter();
+    noiseFilter.type = 'lowpass';
+    noiseFilter.frequency.value = 350;
+    const noiseGain = audioCtx.createGain();
+    noiseGain.gain.value = 0.025;
+    noise.connect(noiseFilter).connect(noiseGain).connect(masterGain);
+    noise.start();
+    nodes.push({ noise, noiseGain });
+  }
+
+  function toggle() {
+    makeAmbient();
+    if (audioCtx.state === 'suspended') audioCtx.resume();
+    const t = audioCtx.currentTime;
+    if (playing) {
+      masterGain.gain.cancelScheduledValues(t);
+      masterGain.gain.linearRampToValueAtTime(0, t + 1.5);
+      playing = false;
+    } else {
+      masterGain.gain.cancelScheduledValues(t);
+      masterGain.gain.linearRampToValueAtTime(0.35, t + 2.5);
+      playing = true;
+    }
+    sessionStorage.setItem('ambient', playing ? '1' : '0');
+    updateUI();
+  }
+
+  function updateUI() {
+    const btn = document.querySelector('.music-toggle');
+    if (!btn) return;
+    btn.classList.toggle('playing', playing);
+    btn.querySelector('.label').textContent = playing ? 'playing' : 'play ambient';
+  }
+
+  function inject() {
+    if (document.querySelector('.music-toggle')) return;
+    const btn = document.createElement('button');
+    btn.className = 'music-toggle';
+    btn.innerHTML = `
+      <span class="eq"><span></span><span></span><span></span><span></span></span>
+      <span class="label">play ambient</span>
+    `;
+    btn.addEventListener('click', toggle);
+    document.body.appendChild(btn);
+
+    // hover state for custom cursor
+    btn.addEventListener('mouseenter', () => {
+      document.querySelector('.cursor-dot')?.classList.add('hover');
+      document.querySelector('.cursor-ring')?.classList.add('hover');
+    });
+    btn.addEventListener('mouseleave', () => {
+      document.querySelector('.cursor-dot')?.classList.remove('hover');
+      document.querySelector('.cursor-ring')?.classList.remove('hover');
+    });
+
+    // auto-resume across pages within session
+    if (sessionStorage.getItem('ambient') === '1') {
+      // need a user gesture; show subtle hint
+      btn.querySelector('.label').textContent = 'click to resume';
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', inject);
+  } else {
+    inject();
+  }
+})();

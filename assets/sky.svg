@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" width="400" height="200">
+  <!-- punpun-style screentone sky with single bird silhouette -->
+  <defs>
+    <pattern id="dots" patternUnits="userSpaceOnUse" width="4" height="4">
+      <circle cx="1" cy="1" r="0.6" fill="#9a9a96" opacity="0.4"/>
+    </pattern>
+    <linearGradient id="skygrad" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#0a0a0a"/>
+      <stop offset="1" stop-color="#181818"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="200" fill="url(#skygrad)"/>
+  <rect width="400" height="200" fill="url(#dots)"/>
+  <!-- horizon line -->
+  <line x1="0" y1="155" x2="400" y2="155" stroke="#4a4a47" stroke-width="0.5" opacity="0.5"/>
+  <!-- distant building silhouettes -->
+  <rect x="20" y="130" width="20" height="25" fill="#050505"/>
+  <rect x="40" y="120" width="15" height="35" fill="#050505"/>
+  <rect x="55" y="135" width="22" height="20" fill="#050505"/>
+  <rect x="320" y="125" width="18" height="30" fill="#050505"/>
+  <rect x="338" y="115" width="14" height="40" fill="#050505"/>
+  <rect x="352" y="130" width="20" height="25" fill="#050505"/>
+  <!-- moon -->
+  <circle cx="320" cy="50" r="22" fill="#f2f0ec" opacity="0.85"/>
+  <circle cx="310" cy="45" r="20" fill="#0a0a0a" opacity="0.3"/>
+  <!-- small punpun silhouette flying -->
+  <g transform="translate(120,70) scale(0.3)">
+    <ellipse cx="50" cy="55" rx="38" ry="40" fill="#0a0a0a"/>
+    <path d="M 30 20 L 35 35 L 40 22 Z M 60 22 L 65 35 L 70 20 Z" fill="#0a0a0a"/>
+  </g>
+  <!-- power line -->
+  <line x1="0" y1="100" x2="400" y2="100" stroke="#0a0a0a" stroke-width="1.2"/>
+  <line x1="0" y1="103" x2="400" y2="103" stroke="#0a0a0a" stroke-width="0.6"/>
+</svg>
