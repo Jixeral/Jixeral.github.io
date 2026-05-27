@@ -476,3 +476,47 @@ document.head.appendChild(_bubbleStyle);
   function escapeHtml(s) { return s.replace(/[<>&"]/g, c => ({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'}[c])); }
   renderEntries();
 })();
+
+// ===== CONTACT FORM AJAX =====
+(function initContactForm() {
+  const form = document.getElementById('contact-form');
+  if (!form) return;
+  const status = document.getElementById('form-status');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const data = new FormData(form);
+    
+    if (status) {
+      status.textContent = 'sending...';
+      status.style.color = 'var(--ink-faint)';
+    }
+
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        if (status) {
+          status.textContent = 'message sent! thanks for reaching out.';
+          status.style.color = '#c43030'; // Use the accent red
+        }
+        form.reset();
+      } else {
+        const errorData = await response.json();
+        if (status) {
+          status.textContent = errorData.errors ? errorData.errors[0].message : 'something went wrong.';
+          status.style.color = 'orange';
+        }
+      }
+    } catch (error) {
+      if (status) {
+        status.textContent = 'network error. please try again later.';
+        status.style.color = 'orange';
+      }
+    }
+  });
+})();

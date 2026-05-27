@@ -66,15 +66,15 @@
 
       <div>
         <h3>or, write me directly</h3>
-        <p>messages from this form will land in my inbox — once i hook up the form's backend. for now consider this a soft launch.</p>
+        <p>messages from this form will land in my inbox.</p>
 
-        <!-- when you set up Formspree, change the action="" to your endpoint url -->
-        <form class="contact-form" action="" method="POST">
+        <div id="form-status" style="margin-bottom: 1rem; font-size: 14px; min-height: 1.2em; font-family: 'JetBrains Mono', monospace;"></div>
+
+        <form id="contact-form" class="contact-form" action="https://formspree.io/f/mredonvz" method="POST">
           <input type="text" name="name" placeholder="your name (or pseudonym)" required>
           <input type="email" name="email" placeholder="your email (so i can reply)" required>
           <input type="text" name="subject" placeholder="subject (optional)">
           <textarea name="message" placeholder="what's on your mind?" required></textarea>
-          <p class="form-note">⚠️ this form needs a backend to actually send. set up <a href="https://formspree.io" target="_blank">formspree.io</a> (free, 5min) then paste your endpoint URL into the form's <code>action=""</code> in contact.html.</p>
           <button type="submit">send →</button>
         </form>
       </div>
